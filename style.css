@@ -1,0 +1,144 @@
+html{
+  font-size: 13px;
+}
+
+body{
+  overflow: scroll;
+  text-align: center;
+}
+
+:root{
+  --anime-duration: 800ms;
+  --anime-delay-init: 100ms;
+  --anime-delay-interval: 150ms;
+  --anime-delay-A: calc(var(--anime-delay-init) + 0 * var(--anime-delay-interval));
+  --anime-delay-B: calc(var(--anime-delay-init) + 1 * var(--anime-delay-interval));
+  --anime-delay-C: calc(var(--anime-delay-init) + 2 * var(--anime-delay-interval));
+}
+
+.title{
+  font-size: 3.2rem;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-iteration-count: 1;
+  animation-duration: var(--anime-duration);
+  animation-delay: var(--anime-delay-A);
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
+}
+
+.explanatory-box{
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-iteration-count: 1;
+  animation-duration: var(--anime-duration);
+  animation-delay: var(--anime-delay-B);
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
+}
+
+.explanatory-box{
+  font-size: 2.0rem;
+  margin-top: 4.0rem;
+  margin-bottom: 4.0rem;
+}
+.explanatory-sub{
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 4.0rem;
+}
+
+.ask{
+  margin-top: 1.5rem;
+  margin-bottom: 1.3rem;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-iteration-count: 1;
+  animation-duration: var(--anime-duration);
+  animation-delay: var(--anime-delay-C);
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
+}
+
+.ask-box{
+  display: block;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+  border-radius:5px;
+  background-color: #fff;
+}
+
+.ask-content{
+  color:#333;
+  font-size: 1.6rem;
+  display: inline;
+  margin: 0.5rem 0.5rem;
+  text-decoration: none;
+}
+
+.ask-content:hover{
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+}
+
+.ask-content::after{
+  position: relative;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+
+
+.ask-box input{
+  display: none;
+}
+
+.hidden-box{
+  text-align: left;
+  margin-left: 3.0rem;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-duration: 200ms;
+  transition-delay: 0
+}
+
+.hidden-box .hidden-text{
+  font-size: 1.5rem;
+  color: #d00000;
+}
+
+.ask-box input:checked ~ .hidden-box{
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;
+  padding: 0;
+  height: auto;
+  opacity: 1;
+}
+
+@keyframes FadeIn{
+  0%{opacity: 0}
+  100%{opacity: 1}
+}
+
+.blank-top{
+  margin-top:4rem;
+}
+
+
+
+
+
+@media screen and (max-width: 640px){
+  html{
+    font-size: 12px;
+  }
+}
