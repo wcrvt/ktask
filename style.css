@@ -16,9 +16,21 @@ body{
   --anime-delay-C: calc(var(--anime-delay-init) + 2 * var(--anime-delay-interval));
 }
 
+@keyframes FadeIn{
+  0%{opacity: 0}
+  100%{opacity: 1}
+}
+
+.blank-top{
+  margin-top:4rem;
+}
+
 .title{
   font-size: 3.2rem;
   filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.6));
+}
+
+.title-animation{
   opacity: 0;
   animation-name: FadeIn;
   animation-iteration-count: 1;
@@ -28,7 +40,8 @@ body{
   animation-fill-mode:forwards;
 }
 
-.explanatory-box{
+
+.explanatory-animation{
   opacity: 0;
   animation-name: FadeIn;
   animation-iteration-count: 1;
@@ -124,15 +137,36 @@ body{
   opacity: 1;
 }
 
-@keyframes FadeIn{
-  0%{opacity: 0}
-  100%{opacity: 1}
+.resp{
+  margin-top: 1.5rem;
+  margin-bottom: 1.3rem;
+  opacity: 0;
+  animation-name: FadeIn;
+  animation-iteration-count: 1;
+  animation-duration: var(--anime-duration);
+  animation-delay: var(--anime-delay-A);
+  animation-timing-function: ease;
+  animation-fill-mode:forwards;
 }
 
-.blank-top{
-  margin-top:4rem;
+.resp-box{
+  display: block;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  width:80%;
+  margin-right:auto;
+  margin-left:auto;
+  border-radius:5px;
+  background-color: #fff;
 }
 
+.response{
+  color:#333;
+  font-size: 1.6rem;
+  display: inline;
+  margin: 0.5rem 0.5rem;
+  text-decoration: none;
+}
 
 
 
